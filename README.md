@@ -52,10 +52,3 @@ The data processing follows a structured sequence:
 * [cite_start]Our module is designed to be trained on publicly available satellite imagery, ensuring the method can be generalized and applied in low-resource contexts[cite: 400].
 * The system is designed as a dynamic mapping module to support real-time decision-making, moving away from static historical maps[cite: 51, 405].
 * [cite_start]By utilizing radar satellite imagery (Sentinel-1), the approach is robust against environmental obstructions such as cloud cover[cite: 408].
-
----
-
-### 💡 أهمية المشروع (Gap Analysis)
-[cite_start]يتميز هذا العمل عن الأبحاث السابقة بقدرته على تقديم نظام **ديناميكي** وغير مكلف، حيث يعتمد على صور الأقمار الصناعية المتاحة للعموم، مما يجعله قابلاً للتوسع عالمياً في المناطق ذات الموارد المحدودة[cite: 400, 405].
-
----
