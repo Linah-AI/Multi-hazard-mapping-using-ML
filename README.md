@@ -2,31 +2,58 @@
 A Machine Learning module designed to automatically identify and map disaster-affected areas by analyzing satellite imagery
 # 🌍 Multi-Hazard Mapping using Machine Learning
 
-### 🏛️ سياق المشروع
-مشروع أكاديمي مقدم ضمن متطلبات مادة الذكاء الاصطناعي في **جامعة أم القرى**، تحت إشراف **د. [cite_start]عفاف المهمادي**[cite: 1, 6].
+### 🏛️ Project Context
+[cite_start]This academic project was submitted as part of the requirements for the Artificial Intelligence course at **Umm Al-Qura University**[cite: 1, 2]. The research was conducted under the supervision of **Dr. [cite_start]Afaf Almehmadi**[cite: 6].
 
-### 🎯 الهدف من المشروع (Primary Goal)
-[cite_start]يهدف المشروع إلى بناء وحدة ذكاء اصطناعي قادرة على كشف وتحديد المناطق المتضررة من الكوارث بشكل آلي[cite: 29]. [cite_start]يتم ذلك من خلال مقارنة صور الأقمار الصناعية للمنطقة نفسها "قبل" و"بعد" وقوع الكارثة لتقديم خريطة دقيقة وسريعة تدعم فرق الاستجابة للطوارئ في اتخاذ قرارات مبنية على بيانات جغرافية موثوقة[cite: 30, 419, 421].
+[cite_start]**Project Team[cite: 4]:**
+* [cite_start]Remas Saleh Ghandorah [cite: 4]
+* Shatha Ali Alhumaidi [cite: 4]
+* [cite_start]Haden Hassan Alshaar [cite: 4]
+* [cite_start]Hadeel Mohammad Turki [cite: 4]
+* Linah Ebrahim ALsayed [cite: 4]
 
-### 🛠️ المنهجية التقنية (Approach)
-[cite_start]تم اختيار خوارزمية **Random Forest Classifier** كنموذج تعلم آلي خاضع للإشراف (Supervised Learning)[cite: 11, 423]. تم اختيار هذا النموذج تحديداً لقدرته العالية على:
-* [cite_start]التعامل مع الميزات الكبيرة والمستخرجة من صور الأقمار الصناعية[cite: 425].
-* تقديم نتائج مستقرة وقابلة للتفسير (Interpretability) من خلال تحليل أهمية الميزات[cite: 398, 425].
-* [cite_start]العمل بكفاءة حتى مع البيانات التي تحتوي على ضجيج أو نقص جزئي[cite: 426].
+---
 
-### ⚙️ خطوات العمل (Workflow)
-[cite_start]تم معالجة البيانات وفق التسلسل التالي:
-1. [cite_start]**Input Data:** استقبال صور الأقمار الصناعية للمرحلتين (Pre & Post disaster)[cite: 431, 434].
-2. [cite_start]**Preprocessing:** تغيير حجم الصور لتصبح بأبعاد موحدة $(256\times256)$[cite: 435].
-3. [cite_start]**Feature Stacking:** دمج قنوات الصور (RGB) لإنشاء مصفوفة ميزات (Feature Matrix X)[cite: 436, 438].
-4. [cite_start]**Training:** تدريب النموذج على 70% من البيانات واختباره على الـ 30% المتبقية[cite: 115, 440, 442].
-5. [cite_start]**Prediction:** تصنيف كل بكسل بشكل فردي (Pixel-level classification)[cite: 447].
+### 🎯 Primary Goal
+* [cite_start]The objective of this research is to design a Machine Learning (ML) module capable of automatically identifying and mapping disaster-affected areas[cite: 29].
+* [cite_start]The system analyzes geo-spatial data to generate initial maps of critical affected sites requiring urgent relief[cite: 30].
+* The module functions by comparing pre-disaster and post-disaster satellite imagery to produce an accurate, automated damage map[cite: 419, 420].
+* [cite_start]This approach improves the speed, precision, and scalability of disaster assessment for emergency response teams[cite: 421].
 
+---
 
-### 📊 المخرجات (Results)
-[cite_start]ينتج النظام خريطة رقمية توضح مستوى الضرر[cite: 445]:
-* **اللون الأبيض:** يمثل مناطق الضرر (Damage Zone)[cite: 448, 484].
-* [cite_start]**اللون الأسود:** يمثل المناطق السليمة (No Damage)[cite: 448, 484].
+### 🛠️ Technical Approach
+[cite_start]The **Random Forest Classifier** was selected as the supervised machine learning technique for this project[cite: 11, 423]. This algorithm was chosen for the following reasons:
+* It can handle a large number of features extracted from satellite imagery[cite: 425].
+* [cite_start]It effectively captures complex changes between pre- and post-disaster imagery[cite: 425].
+* [cite_start]It provides stable and interpretable results [cite: 425][cite_start], which improves transparency and trust through feature importance analysis[cite: 398].
+* [cite_start]It maintains high accuracy even when data is noisy or partially incomplete[cite: 426].
+
+---
+
+### ⚙️ Workflow
+The data processing follows a structured sequence:
+1. [cite_start]**Input Data:** Acquisition of pre-disaster and post-disaster satellite imagery[cite: 431, 434].
+2. [cite_start]**Preprocessing:** Resizing the images to a uniform dimension of $256 \times 256$ pixels[cite: 435].
+3. [cite_start]**Feature Stacking:** Concatenating image channels channel-wise to create a feature matrix (X)[cite: 436, 438].
+4. [cite_start]**Training:** Partitioning the dataset into 70% for training and 30% for testing[cite: 115, 440, 442].
+5. [cite_start]**Prediction:** The model performs pixel-level classification to determine if individual pixels represent damaged areas[cite: 447].
+
+---
+
+### 📊 Results
+[cite_start]The system produces a predicted damage map to assist emergency planners[cite: 445, 484]:
+* **White Color:** Indicates a "Damage Zone"[cite: 448, 484].
+* [cite_start]**Black Color:** Indicates "No Damage"[cite: 448, 484].
+
+---
+
+### 💡 Significance (Gap Analysis)
+* [cite_start]Our module is designed to be trained on publicly available satellite imagery, ensuring the method can be generalized and applied in low-resource contexts[cite: 400].
+* The system is designed as a dynamic mapping module to support real-time decision-making, moving away from static historical maps[cite: 51, 405].
+* [cite_start]By utilizing radar satellite imagery (Sentinel-1), the approach is robust against environmental obstructions such as cloud cover[cite: 408].
+
+---
 
 ### 💡 أهمية المشروع (Gap Analysis)
 [cite_start]يتميز هذا العمل عن الأبحاث السابقة بقدرته على تقديم نظام **ديناميكي** وغير مكلف، حيث يعتمد على صور الأقمار الصناعية المتاحة للعموم، مما يجعله قابلاً للتوسع عالمياً في المناطق ذات الموارد المحدودة[cite: 400, 405].
